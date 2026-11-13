@@ -22,10 +22,16 @@ On Windows PowerShell, if `npm` is blocked by the execution policy, use `npm.cmd
 
 ## Deployment (GitHub Pages)
 
-1. Push the repository to GitHub with `main` as the default branch.
-2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. Push to `main`. The workflow in `.github/workflows/deploy.yml` runs the tests, builds the
-   app and publishes `dist/`.
+The live site is published from the `gh-pages` branch:
+
+1. In **Settings → Pages**, set **Source** to **Deploy from a branch**, branch **`gh-pages`**,
+   folder **`/`**.
+2. Run `npm run deploy:pages`. It builds the app, copies `dist/` plus `.nojekyll` into a
+   throwaway repository and force-pushes it to `gh-pages`.
+3. Pages rebuilds automatically and serves the new bundle within about a minute.
+
+The script needs no extra GitHub permissions: it only pushes the generated branch. It builds
+into `dist/`, publishes from a temporary folder, and leaves `main` containing only source.
 
 No configuration is needed for the repository name. `vite.config.ts` uses `base: './'` and the
 app uses hash routes (`#/t/…`), so the same build works on:
