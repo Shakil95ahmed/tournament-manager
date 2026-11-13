@@ -37,6 +37,15 @@ export function AppFooter() {
             <span>Storage: checking…</span>
           )}
         </a>
+        <a
+          className="app-footer__link"
+          href="https://www.ztostart.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="A project of Zto Start — www.ztostart.com (opens in a new tab)"
+        >
+          A project of Zto Start · www.ztostart.com
+        </a>
       </div>
     </footer>
   );
