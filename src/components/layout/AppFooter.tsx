@@ -42,9 +42,9 @@ export function AppFooter() {
           href="https://ztostart.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="A project of Zto Start — www.ztostart.com (opens in a new tab)"
+          aria-label="A project of ZtoStart — www.ztostart.com (opens in a new tab)"
         >
-          A project of Zto Start · www.ztostart.com
+          A project of ZtoStart · www.ztostart.com
         </a>
       </div>
     </footer>
