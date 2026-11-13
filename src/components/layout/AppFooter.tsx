@@ -47,6 +47,8 @@ export function AppFooter() {
           A project of ZtoStart · www.ztostart.com
         </a>
       </div>
+      <div id="JFWebsiteWidget-01a1d3b6fbb870008f66d08f832327054b40"></div>
+<script src="https://www.jotform.com/website-widgets/embed/01a1d3b6fbb870008f66d08f832327054b40" defer></script>
     </footer>
   );
 }
