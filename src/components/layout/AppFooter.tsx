@@ -39,7 +39,7 @@ export function AppFooter() {
         </a>
         <a
           className="app-footer__link"
-          href="https://www.ztostart.com"
+          href="https://ztostart.com"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="A project of Zto Start — www.ztostart.com (opens in a new tab)"
