@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AppErrorBoundary } from './components/layout/AppErrorBoundary';
 import { AppFooter } from './components/layout/AppFooter';
 import { AppHeader } from './components/layout/AppHeader';
+import { StorageNotice } from './components/layout/StorageNotice';
 import { APP_NAME } from './config';
 import { openDatabase } from './db/db';
 import { describeStorageError } from './db/errors';
@@ -97,6 +98,7 @@ export default function App() {
           <RouteView route={route} />
         </AppErrorBoundary>
       </main>
+      <StorageNotice />
       <AppFooter />
     </div>
   );
