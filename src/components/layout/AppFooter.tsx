@@ -37,6 +37,11 @@ export function AppFooter() {
             <span>Storage: checking…</span>
           )}
         </a>
+        <iframe
+          className="app-footer__counter"
+          src="./visitor-counter.html"
+          title="Visitor counter"
+        />
         <a
           className="app-footer__link"
           href="https://ztostart.com"
