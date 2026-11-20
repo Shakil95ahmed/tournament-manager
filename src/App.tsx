@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { trackPageView } from './analytics';
 import { AppErrorBoundary } from './components/layout/AppErrorBoundary';
 import { AppFooter } from './components/layout/AppFooter';
 import { AppHeader } from './components/layout/AppHeader';
@@ -68,9 +69,12 @@ export default function App() {
     window.scrollTo(0, 0);
     if (firstRoute.current) {
       firstRoute.current = false;
+      // Tag Manager already reports the first page load; only route changes
+      // need an explicit GA4 page_view.
       return;
     }
     mainRef.current?.focus({ preventScroll: true });
+    trackPageView();
   }, [routeKey]);
 
   return (
