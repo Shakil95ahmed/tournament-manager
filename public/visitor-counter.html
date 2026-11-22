@@ -53,5 +53,41 @@
       type="text/javascript"
       src="https://www.freevisitorcounters.com/en/home/counter/1710194/t/2"
     ></script>
+    <script>
+      // Keep the counter working but never let it link away from the app.
+      // The vendor's auth script reads the link above during `load`, so the
+      // cleanup is deferred until after that handler has run.
+      (function () {
+        function disableLinks() {
+          var links = document.querySelectorAll('a');
+          for (var i = 0; i < links.length; i += 1) {
+            var link = links[i];
+            link.removeAttribute('href');
+            link.removeAttribute('target');
+            link.removeAttribute('rel');
+            link.setAttribute('tabindex', '-1');
+            link.style.pointerEvents = 'none';
+            link.style.cursor = 'default';
+            link.style.textDecoration = 'none';
+          }
+        }
+
+        document.addEventListener(
+          'click',
+          function (event) {
+            var target = event.target;
+            if (target && target.closest && target.closest('a')) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+          },
+          true
+        );
+
+        window.addEventListener('load', function () {
+          setTimeout(disableLinks, 0);
+        });
+      })();
+    </script>
   </body>
 </html>

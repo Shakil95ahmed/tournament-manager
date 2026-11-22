@@ -39,8 +39,9 @@ export function AppFooter() {
         </a>
         <iframe
           className="app-footer__counter"
-          src="./visitor-counter.html"
+          src={`./visitor-counter.html?v=${APP_VERSION}`}
           title="Visitor counter"
+          sandbox="allow-scripts allow-same-origin"
         />
         <a
           className="app-footer__link"
